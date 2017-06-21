@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/bg_color"
+    tools:context="educationexplorer.dradtech.com.educationexplorer.MainActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <android.support.v7.widget.CardView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/card_view01"
+                card_view:cardElevation="@dimen/card_elevation"
+                android:orientation="vertical"
+                android:layout_marginBottom="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="5dp"
+                    android:background="@color/white">
+
+                    <EditText
+                        android:id="@+id/searchBox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="search here"
+                        android:layout_toLeftOf="@+id/searchImage"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:fontFamily="sans-serif-light"/>
+
+                    <ImageView
+                        android:id="@+id/searchImage"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/search_logo"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:background="?android:attr/selectableItemBackground"/>
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/card_view02"
+                card_view:cardElevation="@dimen/card_elevation"
+                android:orientation="vertical"
+                android:layout_marginBottom="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/districtLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white">
+
+                        <RelativeLayout
+                            android:id="@+id/districtLayoutClick"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="10dp"
+                            android:background="?android:attr/selectableItemBackground">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="District"
+                                android:textSize="20sp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:fontFamily="sans-serif-light" />
+
+                            <ImageView
+                                android:id="@+id/districtExpandableImage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_expand_more_black_24dp"
+                                android:adjustViewBounds="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentEnd="true"
+                                />
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:id="@+id/districtSubLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            android:padding="6dp"
+                            android:paddingBottom="5dp">
+
+                            <Spinner
+                                android:id="@+id/districtSpinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:entries="@array/district_arrays"
+                                android:fontFamily="sans-serif-light">
+
+                            </Spinner>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:id="@+id/card_view03"
+                    card_view:cardElevation="@dimen/card_elevation"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/facultyLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white">
+
+                        <RelativeLayout
+                            android:id="@+id/facultyLayoutClick"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="10dp"
+                            android:background="?android:attr/selectableItemBackground">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Faculty"
+                                android:textSize="20sp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:fontFamily="sans-serif-light"/>
+
+                            <ImageView
+                                android:id="@+id/facultyExpandableImage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_expand_more_black_24dp"
+                                android:adjustViewBounds="true"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentEnd="true" />
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:id="@+id/facultySubLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone"
+                            android:padding="6dp"
+                            android:paddingBottom="5dp">
+
+                            <Spinner
+                                android:id="@+id/facultySpinner"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:entries="@array/faculty_arrays"
+                                android:fontFamily="sans-serif-light">
+
+                            </Spinner>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/card_view04"
+                card_view:cardElevation="@dimen/card_elevation"
+                android:orientation="vertical"
+                android:layout_marginBottom="10dp">
+
+                <LinearLayout
+                    android:id="@+id/affiliationLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@color/white">
+
+                    <RelativeLayout
+                        android:id="@+id/affiliationLayoutClick"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
+                        android:background="?android:attr/selectableItemBackground">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Affiliation"
+                            android:textSize="20sp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginLeft="5dp"
+                            android:fontFamily="sans-serif-light"/>
+
+                        <ImageView
+                            android:id="@+id/affiliationExpandableImage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_expand_more_black_24dp"
+                            android:adjustViewBounds="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/affiliationSubLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone"
+                        android:padding="6dp"
+                        android:paddingBottom="5dp">
+
+                        <Spinner
+                            android:id="@+id/affiliationSpinner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/affiliation_arrays">
+
+                        </Spinner>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:id="@+id/card_view05"
+                card_view:cardElevation="@dimen/card_elevation"
+                android:orientation="vertical">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:orientation="vertical"
+                   android:padding="15dp"
+                   android:background="@color/white">
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Rating"
+                       android:textSize="20sp"
+                       android:layout_marginTop="5dp"
+                       android:fontFamily="sans-serif-light"/>
+
+                   <!--
+                   <RatingBar
+                       android:id="@+id/ratingBar"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:numStars="5"
+                       android:stepSize="1"
+                       android:theme="@style/RatingBar"
+                       />                                  -->
+
+
+                   <com.iarcuschin.simpleratingbar.SimpleRatingBar
+                       android:id="@+id/simpleRatingBar"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_margin="8dp"
+                       app:srb_numberOfStars="5"
+                       app:srb_stepSize="1"
+                       app:srb_fillColor="@color/duskYellow"
+                       app:srb_borderColor="@color/lightGrey"
+                       app:srb_starSize="30dp"
+                       />
+
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Fee"
+                       android:textSize="20sp"
+                       android:layout_marginTop="5dp"
+                       android:fontFamily="sans-serif-light"/>
+
+                   <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
+                       android:id="@+id/discrete_normal"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:padding="3dp"
+                       app:dsb_min="100000"
+                       app:dsb_max="200000"
+                       app:dsb_value="0" />
+
+                   <RelativeLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content">
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="100000"
+                           android:textSize="16sp"
+                           android:fontFamily="sans-serif-light"/>
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="200000"
+                           android:textSize="16sp"
+                           android:fontFamily="sans-serif-light"
+                           android:layout_alignParentTop="true"
+                           android:layout_alignParentRight="true"
+                           android:layout_alignParentEnd="true" />
+                   </RelativeLayout>
+
+               </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
+
+                <Button
+                    android:id="@+id/submitBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Submit"
+                    android:textSize="16sp"
+                    android:onClick="submitBtn"
+                    android:textColor="@color/white"
+                    android:background="@color/colorPrimary" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

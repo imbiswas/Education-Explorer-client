@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Education Explorer</string>
+
+    <string-array name="district_arrays">
+        <item>Kathmandu</item>
+        <item>Lalitpur</item>
+        <item>Bhaktapur</item>
+    </string-array>
+
+    <string-array name="faculty_arrays">
+        <item>Engineering</item>
+        <item>IT</item>
+        <item>Business</item>
+        <item>Medical</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="affiliation_arrays">
+        <item>Tribhuvan University</item>
+        <item>Kathmandu University</item>
+        <item>Pokhara University</item>
+        <item>Purbanchal University</item>
+        <item>CTEVT</item>
+        <item>Other</item>
+    </string-array>
+
+</resources>
