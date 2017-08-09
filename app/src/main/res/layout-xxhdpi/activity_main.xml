@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/parentLayout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
@@ -54,6 +55,7 @@
                         android:layout_alignParentBottom="true"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentEnd="true"
+                        android:onClick="searchBtn"
                         android:background="?android:attr/selectableItemBackground"/>
                 </RelativeLayout>
 
@@ -306,6 +308,35 @@
                        app:srb_starSize="30dp"
                        />
 
+                   <RelativeLayout
+                       android:id="@+id/rating_layout"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="10dp"
+                       android:visibility="gone">
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Rating:"
+                           android:textSize="16sp"
+                           android:fontFamily="sans-serif-light"
+                           android:id="@+id/rating_text" />
+
+                       <TextView
+                           android:id="@+id/rating"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="3"
+                           android:textSize="16sp"
+                           android:fontFamily="sans-serif-light"
+                           android:layout_alignParentTop="true"
+                           android:layout_toRightOf="@+id/rating_text"
+                           android:layout_toEndOf="@+id/rating_text"
+                           android:layout_marginLeft="13dp"
+                           android:layout_marginStart="13dp" />
+                   </RelativeLayout>
+
 
                    <TextView
                        android:layout_width="wrap_content"
@@ -346,6 +377,35 @@
                            android:layout_alignParentEnd="true" />
                    </RelativeLayout>
 
+                   <RelativeLayout
+                       android:id="@+id/selected_fee_layout"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_marginTop="10dp"
+                       android:visibility="gone">
+
+                       <TextView
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="Selected Fee:"
+                           android:textSize="16sp"
+                           android:fontFamily="sans-serif-light"
+                           android:id="@+id/textView2" />
+
+                       <TextView
+                           android:id="@+id/selected_fee"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="200000"
+                           android:textSize="16sp"
+                           android:fontFamily="sans-serif-light"
+                           android:layout_alignParentTop="true"
+                           android:layout_toRightOf="@+id/textView2"
+                           android:layout_toEndOf="@+id/textView2"
+                           android:layout_marginLeft="13dp"
+                           android:layout_marginStart="13dp" />
+                   </RelativeLayout>
+
                </LinearLayout>
 
             </android.support.v7.widget.CardView>
@@ -364,7 +424,7 @@
                     android:textSize="16sp"
                     android:onClick="submitBtn"
                     android:textColor="@color/white"
-                    android:background="@color/colorPrimary" />
+                    android:background="@drawable/submit_btn_selector"/>
             </LinearLayout>
 
         </LinearLayout>

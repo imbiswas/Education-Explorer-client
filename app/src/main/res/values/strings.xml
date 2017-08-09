@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Education Explorer</string>
+    <string name="logo">College Logo</string>
+    <string name="string_internet_connection_not_available">Internet Connection Not Available</string>
+    <string name="string_some_thing_wrong">Something went wrong. Try again later !!</string>
+    <string name="select_all_to_submit">Select all to submit !!</string>
 
     <string-array name="district_arrays">
         <item>Kathmandu</item>
