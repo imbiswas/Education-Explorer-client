@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,6 +9,8 @@
     android:orientation="vertical"
     android:background="@color/bg_color"
     tools:context="educationexplorer.dradtech.com.educationexplorer.MainActivity">
+
+
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -427,8 +429,28 @@
                     android:background="@drawable/submit_btn_selector"/>
             </LinearLayout>
 
+
         </LinearLayout>
 
-    </ScrollView>
 
-</LinearLayout>
+    </ScrollView>
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@drawable/ic_action_profile"
+
+            />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+
+
+
+</RelativeLayout>
