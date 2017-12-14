@@ -341,7 +341,8 @@ public class MainActivity extends AppCompatActivity {
 
                                     if(jsonArray != null){
 
-                                        for(int i=0; i<jsonArray.size(); i++){
+                                        for(int i=0; i<jsonArray.size(); i++) {
+
                                             address = String.valueOf(jsonArray.get(i).getAsJsonArray().get(0).getAsJsonObject().get("Address"));
                                             affilation = String.valueOf(jsonArray.get(i).getAsJsonArray().get(0).getAsJsonObject().get("Affilation"));
                                             college_name = String.valueOf(jsonArray.get(i).getAsJsonArray().get(0).getAsJsonObject().get("College Name"));
@@ -350,22 +351,22 @@ public class MainActivity extends AppCompatActivity {
                                             logo = String.valueOf(jsonArray.get(i).getAsJsonArray().get(0).getAsJsonObject().get("logo"));
                                             url = String.valueOf(jsonArray.get(i).getAsJsonArray().get(0).getAsJsonObject().get("url"));
 
-                                            Log.e("Address", String.valueOf(jsonArray.get(i).getAsJsonArray().get(i).getAsJsonObject().get("Address")));
-                                            Log.e("Affilation", String.valueOf(jsonArray.get(i).getAsJsonArray().get(i).getAsJsonObject().get("Affilation")));
-                                            Log.e("College Name", String.valueOf(jsonArray.get(i).getAsJsonArray().get(i).getAsJsonObject().get("College Name")));
-                                            Log.e("District", String.valueOf(jsonArray.get(i).getAsJsonArray().get(i).getAsJsonObject().get("District")));
-                                            Log.e("Faculty", String.valueOf(jsonArray.get(i).getAsJsonArray().get(i).getAsJsonObject().get("Faculty")));
-                                            Log.e("logo", String.valueOf(jsonArray.get(i).getAsJsonArray().get(i).getAsJsonObject().get("logo")));
-                                            Log.e("url", String.valueOf(jsonArray.get(i).getAsJsonArray().get(i).getAsJsonObject().get("url")));
+                                            Log.e("Address", String.valueOf(jsonArray.get(i).getAsJsonArray().get(0).getAsJsonObject().get("Address")));
+                                            Log.e("Affilation", String.valueOf(jsonArray.get(i).getAsJsonArray().get(0).getAsJsonObject().get("Affilation")));
+                                            Log.e("College Name", String.valueOf(jsonArray.get(i).getAsJsonArray().get(0).getAsJsonObject().get("College Name")));
+                                            Log.e("District", String.valueOf(jsonArray.get(i).getAsJsonArray().get(0).getAsJsonObject().get("District")));
+                                            Log.e("Faculty", String.valueOf(jsonArray.get(i).getAsJsonArray().get(0).getAsJsonObject().get("Faculty")));
+                                            Log.e("logo", String.valueOf(jsonArray.get(i).getAsJsonArray().get(0).getAsJsonObject().get("logo")));
+                                            Log.e("url", String.valueOf(jsonArray.get(i).getAsJsonArray().get(0).getAsJsonObject().get("url")));
 
                                             //Removing double quoted
-                                            String trimAddress = address.substring(1, address.length()-1);
-                                            String trimAffilation = affilation.substring(1, affilation.length()-1);
-                                            String trimCollegeName = college_name.substring(1, college_name.length()-1);
-                                            String trimDistrict = district.substring(1, district.length()-1);
-                                            String trimFaculty = faculty.substring(1, faculty.length()-1);
-                                            String trimLogo = logo.substring(1, logo.length()-1);
-                                            String trimUrl = url.substring(1, url.length()-1);
+                                            String trimAddress = address.substring(1, address.length() - 1);
+                                            String trimAffilation = affilation.substring(1, affilation.length() - 1);
+                                            String trimCollegeName = college_name.substring(1, college_name.length() - 1);
+                                            String trimDistrict = district.substring(1, district.length() - 1);
+                                            String trimFaculty = faculty.substring(1, faculty.length() - 1);
+                                            String trimLogo = logo.substring(1, logo.length() - 1);
+                                            String trimUrl = url.substring(1, url.length() - 1);
 
                                             ReturnResponse returnResponse = new ReturnResponse(trimAddress, trimAffilation, trimCollegeName, trimDistrict,
                                                     trimFaculty, trimLogo, trimUrl);
