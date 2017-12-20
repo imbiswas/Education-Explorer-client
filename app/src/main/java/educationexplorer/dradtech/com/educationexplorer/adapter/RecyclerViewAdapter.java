@@ -7,8 +7,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
@@ -81,6 +83,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.text_affilation.setText("Affilation:");
         holder.text_faculty.setText("Faculty:");
         holder.text_website.setText("Website:");
+        holder.map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context,"success",Toast.LENGTH_SHORT).show();
+            }
+        });
+
     }
 
     public ReturnResponse getItem(int position){
@@ -101,6 +110,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         TextView affilation, text_affilation;
         TextView faculty, text_faculty;
         TextView website, text_website;
+        ImageButton map;
 
         public MyViewHolder(View view){
             super(view);
@@ -112,6 +122,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             affilation = (TextView) view.findViewById(R.id.affilation);
             faculty = (TextView) view.findViewById(R.id.faculty);
             website = (TextView) view.findViewById(R.id.website);
+            map=(ImageButton) view.findViewById(R.id.mapbtn);
 
             text_district = (TextView) view.findViewById(R.id.text_district);
             text_affilation = (TextView) view.findViewById(R.id.text_affilation);
