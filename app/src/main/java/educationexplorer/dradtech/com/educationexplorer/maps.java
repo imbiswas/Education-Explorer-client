@@ -67,6 +67,8 @@ public class maps extends FragmentActivity implements OnMapReadyCallback,
 
         // Add a marker in Sydney and move the camera
         LatLng kupondole = new LatLng(27.6862, 85.3149);
+        TextView txt=(TextView)findViewById(R.id.txt); //old code
+        txt.setText(clg_name);
         //mMap.addMarker(new MarkerOptions().position(kupondole).title("Marker in Kupondole"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(kupondole,6));
 
@@ -76,7 +78,7 @@ public class maps extends FragmentActivity implements OnMapReadyCallback,
     public void onClick(View v){
         if(v.getId()==R.id.btn){
 
-            TextView txt=(TextView)findViewById(R.id.txt); //old code
+
             String location=address.toString(); //old code
 //            String location=address; //new code
             List<Address> addressList = null;
