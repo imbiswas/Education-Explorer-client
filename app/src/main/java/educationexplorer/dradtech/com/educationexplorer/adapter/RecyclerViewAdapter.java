@@ -92,7 +92,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             @Override
             public void onClick(View view) {
 
-//                Toast.makeText(context,"success",Toast.LENGTH_SHORT).show();
+                Toast.makeText(context,"Loading Map...",Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(context,maps.class);
                 Bundle bundler = new Bundle();//creates a bundle
                 String colg_address = holder.address.getText().toString();//college address to string
