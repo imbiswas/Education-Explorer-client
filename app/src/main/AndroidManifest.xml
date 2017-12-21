@@ -34,7 +34,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCMSm-CBzEhV8bAr3tpbiJJ86B0bNpVr0M" />
+            android:value="@string/google_maps_key" />
 
 
         <activity
@@ -60,6 +60,13 @@
             android:name=".Result"
             android:screenOrientation="portrait">
         </activity>
+        <activity android:name=".maps">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter></activity>
+        <activity android:name=".test"></activity>
     </application>
 
 </manifest>

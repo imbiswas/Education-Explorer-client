@@ -4,13 +4,15 @@ import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
-import android.os.Bundle;
+import com.google.android.gms.location.LocationListener;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -20,24 +22,33 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-
 import java.io.IOException;
 import java.util.List;
 
 public class maps extends FragmentActivity implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
-        GoogleApiClient.OnConnectionFailedListener{
+        GoogleApiClient.OnConnectionFailedListener,
+        LocationListener {
 
     private GoogleMap mMap;
+    String address, clg_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+        //Handling Bundle received
+        Bundle bundle = new Bundle();
+        bundle = getIntent().getExtras();
+        address = bundle.getString("address_key"); //address is received
+        clg_name=bundle.getString("name_key");
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+
     }
 
 
@@ -58,17 +69,16 @@ public class maps extends FragmentActivity implements OnMapReadyCallback,
         LatLng kupondole = new LatLng(27.6862, 85.3149);
         //mMap.addMarker(new MarkerOptions().position(kupondole).title("Marker in Kupondole"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(kupondole,6));
-        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
 
-        }
 
     }
 
     public void onClick(View v){
         if(v.getId()==R.id.btn){
-            EditText txt=(EditText)findViewById(R.id.txt);
-            String location=txt.getText().toString();
+
+            TextView txt=(TextView)findViewById(R.id.txt); //old code
+            String location=address.toString(); //old code
+//            String location=address; //new code
             List<Address> addressList = null;
             MarkerOptions mo=new MarkerOptions();
 
@@ -80,13 +90,13 @@ public class maps extends FragmentActivity implements OnMapReadyCallback,
                     e.printStackTrace();
                 }
                 for(int i=0;i<addressList.size();i++){
-                   Address address=addressList.get(i);
-                   LatLng latLng=new LatLng(address.getLatitude(),address.getLongitude());
-                   mo.position(latLng);
-                   mMap.addMarker(mo);
-                   mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,15));
+                    Address address=addressList.get(i);
+                    LatLng latLng=new LatLng(address.getLatitude(),address.getLongitude());
+                    mo.position(latLng);
+                    mMap.addMarker(mo);
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,15));
 
-                   mMap.animateCamera(CameraUpdateFactory.zoomIn());
+                    mMap.animateCamera(CameraUpdateFactory.zoomIn());
 
                 }
             }
@@ -96,6 +106,12 @@ public class maps extends FragmentActivity implements OnMapReadyCallback,
     }
 
 
+
+
+    @Override
+    public void onLocationChanged(Location location) {
+
+    }
 
 
 

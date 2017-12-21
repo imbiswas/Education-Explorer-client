@@ -3,6 +3,7 @@ package educationexplorer.dradtech.com.educationexplorer.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +19,11 @@ import java.util.Collections;
 import java.util.List;
 
 import educationexplorer.dradtech.com.educationexplorer.R;
+import educationexplorer.dradtech.com.educationexplorer.maps;
 import educationexplorer.dradtech.com.educationexplorer.model.ReturnResponse;
+import educationexplorer.dradtech.com.educationexplorer.test;
+
+import static android.support.v4.content.ContextCompat.startActivity;
 
 /**
  * Created by siddhant on 7/27/17.
@@ -86,7 +91,17 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context,"success",Toast.LENGTH_SHORT).show();
+
+//                Toast.makeText(context,"success",Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(context,maps.class);
+                Bundle bundler = new Bundle();//creates a bundle
+                String colg_address = holder.address.getText().toString();//college address to string
+                String colg_name = holder.collegeName.getText().toString();
+                bundler.putString("address_key",colg_address); // puts the address inside the bundle
+                bundler.putString("name_key",colg_name);
+                intent.putExtras(bundler);
+                context.startActivity(intent);
+
             }
         });
 
