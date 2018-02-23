@@ -101,6 +101,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 bundler.putString("name_key",colg_name);
                 intent.putExtras(bundler);
                 context.startActivity(intent);
+                Toast.makeText(context,"Loading Map...",Toast.LENGTH_SHORT).show();
 
             }
         });
